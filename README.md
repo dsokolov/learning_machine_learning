@@ -1,4 +1,4 @@
-####Осваиваю tensorflow.
+##Осваиваю tensorflow.
 
 Создаём requirements.txt
 
@@ -12,12 +12,24 @@
 
 `source ./venv/bin/activate`
 
-Устанавливаем
+Устанавливаем зависимости
 
 `pip install -r requirements.txt`
 
-
 Запуск jupyter-notebook
 
-`/venv/bin/python /venv/bin/jupyter-notebook --no-browser --ip 127.0.0.1 --port 8888 --port-retries=0`
+`venv/bin/python venv/bin/jupyter-notebook --no-browser --ip 127.0.0.1 --port 8888 --port-retries=0`
 
+Экспортируем модель в tflite
+
+`venv/bin/tflite_convert --saved_model_dir models/1551101184/ --output_file=model.lite`
+
+###Tensorboard
+
+Запуск tensorboard
+
+`venv/bin/tensorboard --logdir tensorboard_logs/`
+
+Остановить tensorboard
+
+`pkill -f "tensorboard"`
